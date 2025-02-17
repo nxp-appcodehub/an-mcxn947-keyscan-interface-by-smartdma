@@ -42,7 +42,7 @@ The Keyscan scheme has no fixed interface. It can be used for matrix scanning an
 
 Connect PmodKYPD board to J7 (PMOD header) of FRDM-MCXN947:
 
-![hardware](images\hardware.png)
+![hardware](images/hardware.png)
 
 ### 3.2 Step 2
 
@@ -50,19 +50,19 @@ Connect PmodKYPD board to J7 (PMOD header) of FRDM-MCXN947:
 
 1. Open MCUXpresso IDE, in the Quick Start Panel, choose **Import from Application Code Hub**.
 
-   ​	![](images\import_project_1.png)
+   ​	![](images/import_project_1.png)
 
 2. Enter the demo name in the search bar.
 
-   ![](images\import_project_2.png) 
+   ![](images/import_project_2.png) 
 
 3. Click **Copy GitHub link**, MCUXpresso IDE will automatically retrieve project attributes, then click **Next>**.
 
-   ​	![](images\import_project_3.png)
+   ​	![](images/import_project_3.png)
 
 4. Select **main** branch and then click **Next>**, Select the MCUXpresso project, click **Finish** button to complete import.
 
-   ​	![](images\import_project_4.png)
+   ​	![](images/import_project_4.png)
 
 - Connect the micro USB cable between the PC host and the USB port (J17) on the board.
 
