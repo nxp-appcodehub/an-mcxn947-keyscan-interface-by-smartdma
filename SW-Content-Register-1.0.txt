@@ -1,0 +1,13 @@
+NXP Software Content Register
+
+Package:                   an-mcxn947-keyscan-interface-by-smartdma
+
+Version:                   Rev1.0
+Outgoing License:          BSD-3-Clause
+License File:              LICENSE
+Description and comments:  This demo mainly implements keyscan solution for MCXN series MCU.
+Release Location:          https://github.com/nxp-appcodehub/an-mcxn947-keyscan-interface-by-smartdma
+Origin:                    NXP (BSD-3-Clause)
+                           ARM CMSIS V5.4.0 (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/ 
+                           
+ 

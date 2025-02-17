@@ -1,0 +1,24 @@
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" type="app_note" format="projectfile" versionSchema="1.0.0" name="mcxn947-keyscan-interface-by-smartdma" uuid="c1a35d9b-1be8-4fa8-bcf7-476e8c5695f3">
+    <display_title>
+        AN14184 Using SmartDMA for Keyscan on MCX N Series MCU
+    </display_title>
+    <overview>
+        <![CDATA[This software accompanies application note [AN14184](<a href="https://www.nxp.com.cn/docs/en/application-note/AN14184.pdf">nxp.com.cn/docs/en/application-note/AN14184.pdf</a>).This application note mainly introduces the Keyscan solution for MCX N series MCU. It includes the introduction
+of the Keyscan solution, its features and API routines, and a demo.]]>
+    </overview>
+    <toolchains>
+        <toolchain name="mcux"></toolchain>
+    </toolchains>
+    <families>
+        <family name="mcx"></family>
+    </families>
+    <nxp_compatible_hw>
+        <hw id="FRDM-MCXN947"></hw>
+    </nxp_compatible_hw>
+    <peripherals>
+        <peripheral name="gpio"></peripheral>
+    </peripherals>
+    <categories>
+        <category name="hmi"></category>
+    </categories>
+</data:item>

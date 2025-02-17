@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<configuration name="MCXN947" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_14 http://mcuxpresso.nxp.com/XSD/mex_configuration_14.xsd" uuid="2679b928-1ce0-40a7-8978-1488166a2e2c" version="14" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_14" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <common>
+      <processor>MCXN947</processor>
+      <package>MCXN947VDF</package>
+      <board>FRDM-MCXN947</board>
+      <mcu_data>ksdk2_0</mcu_data>
+      <cores selected="cm33_core0">
+         <core name="Cortex-M33 (Core #0)" id="cm33_core0" description=""/>
+         <core name="Cortex-M33 (Core #1)" id="cm33_core1" description=""/>
+      </cores>
+      <description>Configuration imported from frdmmcxn947_gpio_input_interrupt</description>
+   </common>
+   <preferences>
+      <validate_boot_init_only>true</validate_boot_init_only>
+      <generate_extended_information>false</generate_extended_information>
+      <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
+      <update_include_paths>true</update_include_paths>
+      <generate_registers_defines>false</generate_registers_defines>
+   </preferences>
+   <tools>
+      <pins name="Pins" version="14.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/pin_mux.c" update_enabled="true"/>
+            <file path="board/pin_mux.h" update_enabled="true"/>
+         </generated_project_files>
+         <pins_profile>
+            <processor_version>0.14.17</processor_version>
+            <pin_labels>
+               <pin_label pin_num="L4" pin_signal="PIO1_22/TRIG_IN3/FC5_P6/FC4_P2/CT_INP14/SCT0_OUT4/FLEXIO0_D30/ADC1_A22" label="P1_22/J11[24]/J3[3]/SJ9[3]" identifier="EZH_DEBUGIO"/>
+               <pin_label pin_num="C8" pin_signal="PIO0_20/WUU0_IN4/FC0_P4/FC1_P0/CT_INP0/FLEXIO0_D4/I3C0_SDA/TSI0_CH15/ADC0_A12" label="P0_20/R186[3]/J16[2]" identifier="ROW4"/>
+               <pin_label pin_num="C9" pin_signal="PIO0_19/WUU0_IN3/EWM0_OUT_b/FC0_P3/CT0_MAT3/FLEXIO0_D3/HSCMP1_OUT/TSI0_CH14/ADC0_A11" label="P0_19/J2[13]/J16[1]" identifier="COL4"/>
+               <pin_label pin_num="A10" pin_signal="PIO0_17/FC0_P1/CT0_MAT1/UTICK_CAP3/FLEXIO0_D1/PDM0_DATA0/I3C0_SCL/TSI0_CH12/ADC0_A9" label="P0_17/J16[7]" identifier="COL1"/>
+               <pin_label pin_num="B10" pin_signal="PIO0_16/WUU0_IN2/FC0_P0/CT0_MAT0/UTICK_CAP2/FLEXIO0_D0/PDM0_CLK/I3C0_SDA/TSI0_CH11/ADC0_A8" label="P0_16/J16[3]" identifier="COL3"/>
+               <pin_label pin_num="C10" pin_signal="PIO0_18/EWM0_IN/FC0_P2/CT0_MAT2/FLEXIO0_D2/HSCMP0_OUT/PDM0_DATA1/TSI0_CH13/ADC0_A10" label="P0_18/J2[11]/J16[5]" identifier="COL2"/>
+               <pin_label pin_num="K13" pin_signal="PIO5_6/TRIG_OUT6/LPTMR1_ALT2/TAMPER4/ADC1_B14" label="P5_6/SJ13[1]" identifier="ROW3"/>
+               <pin_label pin_num="D15" pin_signal="PIO3_2/FC7_P0/CT4_MAT0/PWM0_X0/FLEXIO0_D10/SIM1_PD" label="P3_2/J11[20]/J16[8]" identifier="ROW1"/>
+               <pin_label pin_num="D16" pin_signal="PIO3_3/FC7_P1/CT4_MAT1/PWM0_X1/FLEXIO0_D11/SIM1_RST" label="P3_3/J11[19]/SJ12[1]" identifier="ROW2"/>
+            </pin_labels>
+         </pins_profile>
+         <functions_list>
+            <function name="BOARD_InitPins">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm33_core0</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LP_FLEXCOMM4" description="Peripheral LP_FLEXCOMM4 signals are routed in the Pins Tool, but the peripheral is not initialized in the Peripherals Tool." problem_level="1" source="Pins:BOARD_InitPins">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.gpio" description="Pins initialization requires the GPIO Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LP_FLEXCOMM4" signal="LPFLEXCOMM_P0" pin_num="A1" pin_signal="PIO1_8/WUU0_IN10/LPTMR1_ALT3/TRACE_DATA0/FC4_P0/FC5_P4/CT_INP8/SCT0_OUT2/FLEXIO0_D16/PLU_OUT0/ENET0_TXD2/I3C1_SDA/TSI0_CH17/ADC1_A8">
+                     <pin_features>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="passive_filter" value="disable"/>
+                        <pin_feature name="pull_value" value="low"/>
+                        <pin_feature name="input_buffer" value="enable"/>
+                        <pin_feature name="invert_input" value="normal"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LP_FLEXCOMM4" signal="LPFLEXCOMM_P1" pin_num="B1" pin_signal="PIO1_9/TRACE_DATA1/FC4_P1/FC5_P5/CT_INP9/SCT0_OUT3/FLEXIO0_D17/PLU_OUT1/ENET0_TXD3/I3C1_SCL/TSI0_CH18/ADC1_A9">
+                     <pin_features>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="passive_filter" value="disable"/>
+                        <pin_feature name="input_buffer" value="enable"/>
+                        <pin_feature name="invert_input" value="normal"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO0" signal="GPIO, 6" pin_num="C14" pin_signal="PIO0_6/ISPMODE_N/FC0_P2/FC1_P6/CT_INP2/HSCMP2_OUT/PDM0_DATA1/CLKOUT/TSI0_CH10">
+                     <pin_features>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                        <pin_feature name="pull_select" value="up"/>
+                        <pin_feature name="pull_enable" value="enable"/>
+                        <pin_feature name="input_buffer" value="enable"/>
+                        <pin_feature name="invert_input" value="normal"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO0" signal="GPIO, 10" pin_num="B12" pin_signal="PIO0_10/FC0_P6/CT0_MAT0/FLEXIO0_D2/ADC0_B10">
+                     <pin_features>
+                        <pin_feature name="slew_rate" value="fast"/>
+                        <pin_feature name="open_drain" value="disable"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                        <pin_feature name="pull_select" value="down"/>
+                        <pin_feature name="pull_enable" value="disable"/>
+                        <pin_feature name="input_buffer" value="enable"/>
+                        <pin_feature name="invert_input" value="normal"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO0" signal="GPIO, 17" pin_num="A10" pin_signal="PIO0_17/FC0_P1/CT0_MAT1/UTICK_CAP3/FLEXIO0_D1/PDM0_DATA0/I3C0_SCL/TSI0_CH12/ADC0_A9">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO0" signal="GPIO, 18" pin_num="C10" pin_signal="PIO0_18/EWM0_IN/FC0_P2/CT0_MAT2/FLEXIO0_D2/HSCMP0_OUT/PDM0_DATA1/TSI0_CH13/ADC0_A10">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO0" signal="GPIO, 16" pin_num="B10" pin_signal="PIO0_16/WUU0_IN2/FC0_P0/CT0_MAT0/UTICK_CAP2/FLEXIO0_D0/PDM0_CLK/I3C0_SDA/TSI0_CH11/ADC0_A8">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO0" signal="GPIO, 19" pin_num="C9" pin_signal="PIO0_19/WUU0_IN3/EWM0_OUT_b/FC0_P3/CT0_MAT3/FLEXIO0_D3/HSCMP1_OUT/TSI0_CH14/ADC0_A11">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO3" signal="GPIO, 2" pin_num="D15" pin_signal="PIO3_2/FC7_P0/CT4_MAT0/PWM0_X0/FLEXIO0_D10/SIM1_PD">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                        <pin_feature name="gpio_per_interrupt_sel" value="no_init"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO3" signal="GPIO, 3" pin_num="D16" pin_signal="PIO3_3/FC7_P1/CT4_MAT1/PWM0_X1/FLEXIO0_D11/SIM1_RST">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                        <pin_feature name="gpio_per_interrupt_sel" value="no_init"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO5" signal="GPIO, 6" pin_num="K13" pin_signal="PIO5_6/TRIG_OUT6/LPTMR1_ALT2/TAMPER4/ADC1_B14">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                        <pin_feature name="gpio_per_interrupt_sel" value="no_init"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO0" signal="GPIO, 20" pin_num="C8" pin_signal="PIO0_20/WUU0_IN4/FC0_P4/FC1_P0/CT_INP0/FLEXIO0_D4/I3C0_SDA/TSI0_CH15/ADC0_A12">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                        <pin_feature name="gpio_per_interrupt_sel" value="no_init"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIO1" signal="GPIO, 22" pin_num="L4" pin_signal="PIO1_22/TRIG_IN3/FC5_P6/FC4_P2/CT_INP14/SCT0_OUT4/FLEXIO0_D30/ADC1_A22">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+         </functions_list>
+      </pins>
+      <clocks name="Clocks" version="12.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/clock_config.c" update_enabled="true"/>
+            <file path="board/clock_config.h" update_enabled="true"/>
+         </generated_project_files>
+         <clocks_profile>
+            <processor_version>0.14.17</processor_version>
+         </clocks_profile>
+         <clock_configurations>
+            <clock_configuration name="BOARD_BootClockFRO12M" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFRO12M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFRO12M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFRO12M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFRO12M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFRO12M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFRO12M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources/>
+               <clock_outputs>
+                  <clock_output id="CLK_144M_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLK_48M_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_12M_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAIN_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="Slow_clock.outFreq" value="3 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="gdet_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="trng_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="SCGMode" value="SIRC" locked="false"/>
+                  <setting id="SCG.SCSSEL.sel" value="SCG.SIRC" locked="false"/>
+                  <setting id="SCG_FIRCCSR_FIRCEN_CFG" value="Disabled" locked="false"/>
+                  <setting id="SYSCON.FREQMEREFCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+                  <setting id="SYSCON.FREQMETARGETCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>false</called_from_default_init>
+            </clock_configuration>
+            <clock_configuration name="BOARD_BootClockFROHF48M" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF48M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF48M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF48M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF48M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF48M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF48M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources/>
+               <clock_outputs>
+                  <clock_output id="CLK_144M_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLK_48M_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_12M_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_HF_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAIN_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="Slow_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="gdet_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="trng_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="SYSCON.FLEXSPICLKSEL.sel" value="NO_CLOCK" locked="false"/>
+                  <setting id="SYSCON.FREQMEREFCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+                  <setting id="SYSCON.FREQMETARGETCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>false</called_from_default_init>
+            </clock_configuration>
+            <clock_configuration name="BOARD_BootClockFROHF144M" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF144M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF144M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF144M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF144M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF144M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockFROHF144M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources>
+                  <clock_source id="SCG.FIRC.outFreq" value="144 MHz" locked="false" enabled="false"/>
+               </clock_sources>
+               <clock_outputs>
+                  <clock_output id="CLK_144M_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLK_48M_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_12M_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_HF_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAIN_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="Slow_clock.outFreq" value="36 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="gdet_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="trng_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="RunPowerMode" value="OD" locked="false"/>
+                  <setting id="SYSCON.AHBCLKDIV.scale" value="1" locked="true"/>
+                  <setting id="SYSCON.FLEXSPICLKSEL.sel" value="NO_CLOCK" locked="false"/>
+                  <setting id="SYSCON.FREQMEREFCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+                  <setting id="SYSCON.FREQMETARGETCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>false</called_from_default_init>
+            </clock_configuration>
+            <clock_configuration name="BOARD_BootClockPLL150M" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL150M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL150M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL150M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL150M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL150M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL150M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources/>
+               <clock_outputs>
+                  <clock_output id="CLK_144M_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLK_48M_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_12M_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_HF_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAIN_clock.outFreq" value="150 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PLL0_CLK_clock.outFreq" value="150 MHz" locked="false" accuracy=""/>
+                  <clock_output id="Slow_clock.outFreq" value="37.5 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="150 MHz" locked="false" accuracy=""/>
+                  <clock_output id="gdet_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="trng_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="PLL0_Mode" value="Normal" locked="false"/>
+                  <setting id="RunPowerMode" value="OD" locked="false"/>
+                  <setting id="SCGMode" value="PLL0" locked="false"/>
+                  <setting id="SCG.PLL0M_MULT.scale" value="50" locked="true"/>
+                  <setting id="SCG.PLL0SRCSEL.sel" value="SCG.FIRC_48M" locked="false"/>
+                  <setting id="SCG.PLL0_NDIV.scale" value="8" locked="true"/>
+                  <setting id="SCG.SCSSEL.sel" value="SCG.PLL0_CLK" locked="false"/>
+                  <setting id="SYSCON.FLEXSPICLKSEL.sel" value="NO_CLOCK" locked="false"/>
+                  <setting id="SYSCON.FREQMEREFCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+                  <setting id="SYSCON.FREQMETARGETCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>true</called_from_default_init>
+            </clock_configuration>
+            <clock_configuration name="BOARD_BootClockPLL100M" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SCG0.EXTAL" description="&apos;EXTAL&apos; (Pins tool id: SCG0.EXTAL, Clocks tool id: SCG.EXTAL) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SCG0.EXTAL" description="&apos;EXTAL&apos; (Pins tool id: SCG0.EXTAL, Clocks tool id: SCG.EXTAL) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SCG0.XTAL" description="&apos;XTAL&apos; (Pins tool id: SCG0.XTAL, Clocks tool id: SCG.XTAL) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SCG0.XTAL" description="&apos;XTAL&apos; (Pins tool id: SCG0.XTAL, Clocks tool id: SCG.XTAL) needs to have &apos;OUTPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.mcx_spc" description="Clocks initialization requires the MCX_SPC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockPLL100M">
+                     <feature name="enabled" evaluation="equal" configuration="cm33_core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources>
+                  <clock_source id="SCG.SOSC.outFreq" value="24 MHz" locked="false" enabled="true"/>
+               </clock_sources>
+               <clock_outputs>
+                  <clock_output id="CLK_144M_clock.outFreq" value="144 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLK_48M_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLK_IN_clock.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FRO_12M_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAIN_clock.outFreq" value="100 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PLL1_CLK_clock.outFreq" value="100 MHz" locked="false" accuracy=""/>
+                  <clock_output id="Slow_clock.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="100 MHz" locked="false" accuracy=""/>
+                  <clock_output id="gdet_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="trng_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="PLL1_Mode" value="Normal" locked="false"/>
+                  <setting id="RunPowerMode" value="SD" locked="false"/>
+                  <setting id="SCGMode" value="PLL1" locked="false"/>
+                  <setting id="SCG.PLL1M_MULT.scale" value="100" locked="true"/>
+                  <setting id="SCG.PLL1_NDIV.scale" value="6" locked="true"/>
+                  <setting id="SCG.PLL1_PDIV.scale" value="4" locked="true"/>
+                  <setting id="SCG.SCSSEL.sel" value="SCG.PLL1_CLK" locked="false"/>
+                  <setting id="SCG_FIRCCSR_FIRCEN_CFG" value="Disabled" locked="false"/>
+                  <setting id="SCG_SOSCCSR_ERFES_SEL" value="CryOsc" locked="false"/>
+                  <setting id="SCG_SOSCCSR_SOSCEN_CFG" value="Enabled" locked="false"/>
+                  <setting id="SYSCON.FREQMEREFCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+                  <setting id="SYSCON.FREQMETARGETCLKSEL.sel" value="SYSCON.evtg_out0a" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>false</called_from_default_init>
+            </clock_configuration>
+         </clock_configurations>
+      </clocks>
+      <dcdx name="DCDx" version="3.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <dcdx_profile>
+            <processor_version>N/A</processor_version>
+         </dcdx_profile>
+         <dcdx_configurations/>
+      </dcdx>
+      <periphs name="Peripherals" version="13.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <peripherals_profile>
+            <processor_version>N/A</processor_version>
+         </peripherals_profile>
+         <functional_groups/>
+         <components/>
+      </periphs>
+      <tee name="TEE" version="5.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <tee_profile>
+            <processor_version>N/A</processor_version>
+         </tee_profile>
+      </tee>
+   </tools>
+</configuration>
