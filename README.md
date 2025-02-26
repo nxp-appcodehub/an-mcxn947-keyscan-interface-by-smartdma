@@ -64,7 +64,7 @@ Connect PmodKYPD board to J7 (PMOD header) of FRDM-MCXN947:
 
    ​	![](images/import_project_4.png)
 
-- Connect the micro USB cable between the PC host and the USB port (J17) on the board.
+- Connect the USB type-c cable between the PC host and the USB port (J17) on the board.
 
 - Open a serial terminal on PC for the serial device with these settings:
 
@@ -100,7 +100,7 @@ Connect PmodKYPD board to J7 (PMOD header) of FRDM-MCXN947:
    Button 5 is pressed 
 
 ## 5. Support<a name="step5"></a>
-*Provide URLs for help here.*
+*No FAQs have been identified for this project.*
 
 #### Project Metadata
 
