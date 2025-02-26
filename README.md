@@ -100,7 +100,6 @@ Connect PmodKYPD board to J7 (PMOD header) of FRDM-MCXN947:
    Button 5 is pressed 
 
 ## 5. Support<a name="step5"></a>
-*No FAQs have been identified for this project.*
 
 #### Project Metadata
 
